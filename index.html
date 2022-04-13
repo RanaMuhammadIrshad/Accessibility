@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility</title>
+</head>
+<body>
+    <!-- we can only have 1 H1 tag and the text should match the title tag -->
+    <h1>Accessibility</h1>
+    
+    <section>
+        <h2>Main section title</h2>
+        <h3>Second lever title</h3>
+    </section>
+
+    <section>
+        <h2>Main section title</h2>
+        <h3>Second lever title</h3>
+    </section>
+
+    <h2>.: Aria labels :.</h2>
+
+    <button>X</button> <!-- in this case the only thing accessible to screen readers is the "X" -->
+    <!-- we can make this element more accessible by adding an aria-label -->
+    <button aria-label="close popup">X</button> 
+
+    <h2>.: Roles :.</h2>
+    <p> the role attribute defines how an element should be interpreted by the screen reader</p>
+    <a href="#">Delete</a>
+    <a href="#" role="button" aria-label="Delete item 1">Delete</a> <!-- to make it more accessible we add a role "button" -->
+
+
+    <!-- 
+        Roles can be used to add meaning to non semantic elements like DIVs 
+        (BEST PRACTICE would be to use the nav tag)
+    -->
+    <div role="navigation" aria-label="main navigation">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </div>
+
+    <div role="region" aria-label="projects">
+        <h2>Projects</h2>
+        <p>Some text blabla</p>
+    </div>
+
+    <div role="region" aria-label="partners">
+        <h2>Our Partners</h2>
+        <p>Some text blabla</p>
+    </div>
+
+    <!-- BEST PRACTICE use a section tag ..but if you are dealing with legacy code use a role + aria-label -->
+
+
+    <!-- Do not overuse -->
+    <button aria-label="send">send</button> 
+    <!--  screen readers can access text between tags so there is no point adding extra aria-label in this case -->
+
+
+</body>
+</html>

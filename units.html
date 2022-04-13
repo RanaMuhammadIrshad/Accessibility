@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Units</title>
+    <style>
+        h2 {
+            background-color: cadetblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Units</h1>
+
+    <div style="width:100px; background-color: aquamarine;">100px</div>
+    <div style="width:50%; background-color: rgb(70, 167, 134);">50%</div>
+
+    <h2>PX do not use for font-size</h2>
+    <p style="font-size: 20px;">20px</p> <!-- PX overrides user's settings (rems recommended as unit for font-size) -->
+    <p style="font-size: 2rem;">2rem</p>
+
+    <h2>REM vs EM</h2>
+    <p>Rem relative to the root element (HTML) - RECOMMENDED </p>
+    <p>Em relative to their immediate parent</p>
+
+    <div style="font-size: 2rem;">2rem</div>
+    <div style="font-size: 2em;">2em</div>
+
+    <p>Problems with ems arise once we start nesting items</p>
+    <div style="font-size: 20px; background-color: thistle;">
+        <div style="font-size: 2rem;">2rem</div>
+        <div style="font-size: 2em;">2em 
+            <span style="font-size: 2em;"> 2em</span>
+        </div>
+    </div>
+
+    <h2>VH & VW</h2>
+    <p>Relative to the height/width of the viewport</p>
+    <p>Useful to fill up entire height/width (mobile)</p>
+
+
+    <div style="width:25vw; background-color: yellowgreen;">25vw</div>
+    <div style="width:25%; background-color: yellowgreen;">25%</div>
+</body>
+</html>
